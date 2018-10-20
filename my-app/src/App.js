@@ -16,33 +16,6 @@ class App extends Component {
     console.log("Hi from state");
   } //constructor
 
-//beginning old thing
-//   getDogs() {
-//     axios
-//     // Dog CEO API call for breed list
-//     .get("https://dog.ceo/api/breeds/list/all")
-//     .then(response =>
-//       response.data.message(dog => ({
-//         breedlist: `${dog.message}`
-//       }))
-//     )
-//     .then(dogs => {
-//           this.setState({
-//             dogs,
-//             isLoading: false,
-//           });
-//         })
-//     .catch(error => this.setState({ error, isLoading: false }));
-//     console.log("In getDogs");
-//   } //getDogs
-//
-// componentDidMount() {
-//   this.getDogs();
-//   console.log("In componentDidMount");
-// }
-//end old thing
-// beginning new thing
-
 componentDidMount() {
     axios.get(`https://dog.ceo/api/breeds/list/all`)
       .then(res => {
