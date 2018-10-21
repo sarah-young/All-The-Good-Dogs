@@ -9,9 +9,10 @@ class App extends Component {
 
     this.state = {
       dogs: [],
-      selectedBreed: null,
+      selectedBreed: 'American Terrier',
       greeting: 'Select a dog breed.',
-      isLoading: true
+      isLoading: true,
+      image: "components/starter-pup.jpg"
     }; //state
     console.log("Hi from state");
   } //constructor
@@ -30,6 +31,9 @@ componentDidMount() {
         <header className="App-header">
           <h1>They Are All Good Dogs</h1>
         </header>
+        <div className="dog-image">
+        <img src= {this.state.image} />
+        </div>
         <p>
         { this.state.selectedBreed }
         </p>
