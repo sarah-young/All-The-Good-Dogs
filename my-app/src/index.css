@@ -12,3 +12,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.doggo-image {
+  max-width: 50%;
+  display: inline-block;
+}
+
+.dog-breed-list-container {
+  display: inline-block;
+  max-width: 50%;
+  -webkit-column-count: 4;
+   -moz-column-count: 4;
+        column-count: 4;
+        -webkit-column-width: 50px;
+   -moz-column-width: 50px;
+        column-width: 50px;
+}

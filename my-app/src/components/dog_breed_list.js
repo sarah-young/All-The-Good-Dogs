@@ -8,8 +8,7 @@ const BreedListBlock = (props) => {
 // Returns button list UI
 
 let dogBreeds =
-// API CALL TO DOG-CEO
-
+// API CALL TO DOG-CEO, maybe this is stored in state?
 let breeds = dogBreeds.message;
 // Loop through object & create list of keys (1)
 let breedList = Object.keys(breeds);
