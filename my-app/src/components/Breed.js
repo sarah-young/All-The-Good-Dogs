@@ -6,7 +6,7 @@ class Breed extends React.Component {
     const breed = this.props.breed;
 
     return (
-      <option className="dog-breed-button" id={breed}>{breed}</option>
+      <option className="dog-breed-button" id={breed} onClick="">{breed}</option>
     );
   }
 }
