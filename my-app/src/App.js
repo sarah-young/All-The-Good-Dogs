@@ -11,10 +11,12 @@ import axios from 'axios';
   }
 }
 
+// Move this to the dog breed component file eventually?
 componentDidMount(){
   axios.get('https://dog.ceo/api/breeds/list/all')
-  .then(json => console.log(json.data.message))
-}
+  .then(json => this.setState(DogBreeds: json.data.message))
+  .catch(error => alert(error))
+  }
 
   render() {
     return (
