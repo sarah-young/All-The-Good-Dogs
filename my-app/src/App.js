@@ -28,7 +28,7 @@ import DoggoPicture from './components/DoggoPicture';
     return (
           <div className="app w3-row" >
             <h2 className="app-title w3-col l12 m12 s12">Dog Breed Selector <span role="img" aria-label="dog">🐶</span></h2>
-            <DoggoPicture image="default-photo.jpeg" alt="dog eyes staring from screen"/>
+            <DoggoPicture imageterm={imageterm}/>
             <BreedList dogs ={dogs}/>
             <DoggoLabel message={imageterm}  />
           </div>
