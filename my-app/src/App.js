@@ -3,6 +3,13 @@ import axios from 'axios';
 
 //Main App Component
  class App extends React.Component {
+   constructor(props){
+  super(props)
+  this.state = {
+    dogs: [],
+    store: []
+  }
+}
 
   render() {
     return (
