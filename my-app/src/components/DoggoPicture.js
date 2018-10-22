@@ -1,6 +1,9 @@
 import React from 'react';
 
 class DoggoPicture extends React.Component {
+
+
+
   render() {
     const image = this.props.image;
     const alt = this.props.alt;
