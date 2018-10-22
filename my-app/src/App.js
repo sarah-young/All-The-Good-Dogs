@@ -1,91 +1,21 @@
 import React from 'react';
-import axios from 'axios';
+import BreedList from './components/BreedList';
+import DoggoLabel from './components/DoggoLabel';
+import DoggoPicture from './components/DoggoPicture';
 
 //Main App Component
  class App extends React.Component {
-   constructor(props){
-  super(props)
-  this.state = {
-    dogs: [],
-    store: []
-  }
-}
-
-// Move this to the dog breed component file eventually?
-componentDidMount(){
-  axios.get('https://dog.ceo/api/breeds/list/all')
-  .then(json => this.setState(DogBreeds: json.data.message))
-  .catch(error => alert(error))
-  }
-
   render() {
     return (
           <div className="app w3-row" >
             <h2 className="app-title w3-col l12 m12 s12">Dog Breed Selector <span role="img" aria-label="dog">🐶</span></h2>
             <DoggoPicture image="https://bit.ly/2J9UWFs" alt="dog eyes staring from screen"/>
-
             <BreedList breedlist= {doggoArray} />
-
             <DoggoLabel message="Welcome, select a dog breed."/>
           </div>
     );
   }
 }
-
-//Image Component
-//Start off with default props
-//Picture of a pawprint
-class DoggoPicture extends React.Component {
-  render() {
-    const image = this.props.image;
-    const alt = this.props.alt;
-    return (
-      <img src={image} alt={alt} className="doggo-image w3-col l6 m6" />
-    );
-  }
-}
-
-class DoggoLabel extends React.Component {
-  render() {
-    const message = this.props.message;
-    return (
-      <div className="message w3-col">{message}</div>
-    );
-  }
-}
-
-class Breed extends React.Component {
-  render() {
-    const breed = this.props.breed;
-
-    return (
-      <option className="dog-breed-button" id={breed}>{breed}</option>
-    );
-  }
-}
-
-//Breed List Component
-class BreedList extends React.Component {
-  render() {
-    const title = "Dog Breed List";
-    const rows = [];
-    const breedlist = this.props.breedlist;
-    let i;
-    for (i = 0; i < breedlist.length; i++) {
-    rows.push(<Breed breed={breedlist[i]} />)
-    }
-    return (
-
-      <div className="breed-list w3-col l6 m6">
-      <select name={title} className="dog-breed-list-container">
-      {rows}
-      </select>
-      </div>
-
-      );
-    }
-  }
-
 
 //Breed List object
 //Replace object with API call eventually
