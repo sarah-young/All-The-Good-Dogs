@@ -11,6 +11,11 @@ import axios from 'axios';
   }
 }
 
+componentDidMount(){
+  axios.get('https://dog.ceo/api/breeds/list/all')
+  .then(json => console.log(json.data.message))
+}
+
   render() {
     return (
           <div className="app w3-row" >
@@ -52,7 +57,7 @@ class Breed extends React.Component {
     const breed = this.props.breed;
 
     return (
-      <option className="dog-breed-button" idName={breed}>{breed}</option>
+      <option className="dog-breed-button" id={breed}>{breed}</option>
     );
   }
 }
