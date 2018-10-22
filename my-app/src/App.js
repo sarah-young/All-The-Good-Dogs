@@ -44,7 +44,7 @@ class Breed extends React.Component {
     const breed = this.props.breed;
 
     return (
-      <div><button className="dog-breed-button" idName={breed} type="button">{breed}</button></div>
+      <option className="dog-breed-button" idName={breed}>{breed}</option>
     );
   }
 }
@@ -61,12 +61,10 @@ class BreedList extends React.Component {
     }
     return (
 
-
-      <div className="w3-col l6 m6 dog-breed-list-container">
-      <div className="dog-breed-list-title">{title}</div><br />
-      <div className="breed-list">
+      <div className="breed-list w3-col l6 m6">
+      <select name={title} className="dog-breed-list-container">
       {rows}
-      </div>
+      </select>
       </div>
 
       );
