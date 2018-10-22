@@ -10,7 +10,7 @@ import DoggoLabel from './components/DoggoLabel';
    super(props)
    this.state = {
      dogs: [],
-     imageterm: 'terrier-american',
+     imageterm: 'random',
      isLoading: false,
      imageURL: null
      }
@@ -30,20 +30,24 @@ import DoggoLabel from './components/DoggoLabel';
        .catch(error => alert(error)) }
      }
 
+     handleClick() {
+        this.setState({imageterm: this.key})
+        console.log(this.state.imageterm)
+     }
+
 
   render() {
     const dogs = this.state.dogs;
     const imageterm = this.state.imageterm;
     const imageURL = this.state.imageURL;
 
+
     return (
           <div className="app w3-row" >
             <h2 className="app-title w3-col l12 m12 s12">Dog Breed Selector <span role="img" aria-label="dog">🐶</span></h2>
             <DoggoPicture imageterm={imageterm} imageURL={imageURL}/>
             <DoggoLabel message={imageterm} />
-            <BreedList dogs={dogs} imageterm={imageterm} />
-
-
+            <BreedList dogs={dogs} imageterm={imageterm}/>
           </div>
     );
   }
