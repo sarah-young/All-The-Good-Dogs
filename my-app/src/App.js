@@ -16,7 +16,7 @@ import DoggoLabel from './components/DoggoLabel';
      id: null
      }
    }
-
+   // Method on class that is triggered by onClick event
    changeDoggo(id, imageterm) {
      axios.get('https://dog.ceo/api/breed/'+id+'/images/random')
      .then(json => this.setState({imageURL: json.data.message, id: id, imageterm: imageterm}))
@@ -38,18 +38,23 @@ import DoggoLabel from './components/DoggoLabel';
      }
 
   render() {
-
     const dogs = this.state.dogs;
     const imageterm = this.state.imageterm;
     const imageURL = this.state.imageURL;
-
     return (
+      <div className="container">
           <div className="app w3-row" >
-            <h2 className="app-title w3-col l12 m12 s12">Dog Breed Selector <span role="img" aria-label="dog">🐶</span></h2>
+            <h2 className="app-title">Dog Breed Selector <span role="img" aria-label="dog">🐶</span></h2>
+            </div>
+            <div className="w3-row">
             <DoggoPicture imageterm={imageterm} imageURL={imageURL}/>
-            <DoggoLabel message={imageterm} />
             <BreedList dogs={dogs} imageterm={imageterm} changeDoggo={this.changeDoggo.bind(this)} />
+            </div>
+            <div className="w3-row">
+            <DoggoLabel message={imageterm} />
+            </div>
           </div>
+
     );
   }
 }

@@ -7,7 +7,7 @@ class DoggoPicture extends React.Component {
     const imageURL = this.props.imageURL;
 
     return (
-      <img src={imageURL} alt={imageterm} className="doggo-image w3-col l6 m6" />
+      <img src={imageURL} alt={imageterm} className="doggo-image w3-half" />
     );
   }
 }
