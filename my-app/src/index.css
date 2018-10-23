@@ -25,3 +25,12 @@ code {
 .breed-list {
   display: inline-block;
 }
+
+.doggo-label {
+  text-transform: capitalize;
+
+}
+
+.container {
+
+}

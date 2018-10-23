@@ -16,19 +16,21 @@ class BreedList extends React.Component {
       if (breedlistobj[keylist[i]].length === 0) {
     rows.push(<Breed breed={keylist[i]} key={keylist[i]} id={keylist[i]} changeDoggo={changeDoggo}/>)
     } else { for (j = 0; j < breedlistobj[keylist[i]].length; j++) {
-    rows.push(<Breed breed={breedlistobj[keylist[i]][j] + " " + keylist[i]} key={"k"+keylist[i]+"-"+breedlistobj[keylist[i]][j]} id={keylist[i]+"-"+breedlistobj[keylist[i]][j]} changeDoggo={changeDoggo}/>)
+    rows.push(<Breed breed={breedlistobj[keylist[i]][j]
+              + " "
+              + keylist[i]} key={"k"+keylist[i]
+              +"-"+breedlistobj[keylist[i]][j]} id={keylist[i]+"-"
+              +breedlistobj[keylist[i]][j]} changeDoggo={changeDoggo}/> )
       }
     }
   }
 
     return (
-      <div className="container">
-      <div className="breed-list w3-col l6 m6">
-      <div name={title} className="dog-breed-list-container">
+
+      <div name={title} className="dog-breed-list-container w3-col l6 m6">
       {rows}
       </div>
-      </div>
-      </div>
+
     );
   }
 }
