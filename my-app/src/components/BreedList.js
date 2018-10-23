@@ -14,9 +14,9 @@ class BreedList extends React.Component {
     let i; let j;
     for (i = 0; i < keylist.length; i++) {
       if (breedlistobj[keylist[i]].length === 0) {
-    rows.push(<Breed breed={keylist[i]} key={keylist[i]} />)
+    rows.push(<Breed breed={keylist[i]} key={keylist[i]} id={keylist[i]}/>)
     } else { for (j = 0; j < breedlistobj[keylist[i]].length; j++) {
-    rows.push(<Breed breed={breedlistobj[keylist[i]][j] + " " + keylist[i]} key={keylist[i]+"-"+breedlistobj[keylist[i]][j]}/>)
+    rows.push(<Breed breed={breedlistobj[keylist[i]][j] + " " + keylist[i]} key={"k"+keylist[i]+"-"+breedlistobj[keylist[i]][j]} id={keylist[i]+"-"+breedlistobj[keylist[i]][j]}/>)
       }
     }
   }

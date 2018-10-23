@@ -25,13 +25,13 @@ import DoggoLabel from './components/DoggoLabel';
      axios.get('https://dog.ceo/api/breeds/image/random')
      .then(json => this.setState({imageURL: json.data.message}))
      .catch(error => alert(error)) } else{
-       axios.get('https://dog.ceo/api/breed/'+this.state.imageterm+'/images/random')
+       axios.get('https://dog.ceo/api/breed/'+ this.state.imageterm +'/images/random')
        .then(json => this.setState({imageURL: json.data.message}))
        .catch(error => alert(error)) }
      }
 
      handleClick() {
-        this.setState({imageterm: this.key})
+        this.setState({imageterm: this.id})
         console.log(this.state.imageterm)
      }
 
