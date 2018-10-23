@@ -28,13 +28,14 @@ import DoggoLabel from './components/DoggoLabel';
      axios.get('https://dog.ceo/api/breeds/list/all')
      .then(json => this.setState({dogs: json.data.message, isLoading: false}))
      .catch(error => alert(error))
+
      if(this.state.imageterm === 'random') {
      axios.get('https://dog.ceo/api/breeds/image/random')
      .then(json => this.setState({imageURL: json.data.message}))
-     .catch(error => alert(error)) } else{
-       axios.get('https://dog.ceo/api/breed/'+ this.state.imageterm +'/images/random')
-       .then(json => this.setState({imageURL: json.data.message}))
-       .catch(error => alert(error)) }
+     .catch(error => alert(error)) } else {
+      axios.get('https://dog.ceo/api/breed/'+ this.state.imageterm +'/images/random')
+      .then(json => this.setState({imageURL: json.data.message}))
+      .catch(error => alert(error)) }
      }
 
   render() {
@@ -43,15 +44,11 @@ import DoggoLabel from './components/DoggoLabel';
     const imageURL = this.state.imageURL;
     return (
       <div className="container">
-          <div className="app w3-row" >
             <h2 className="app-title">Dog Breed Selector <span role="img" aria-label="dog">🐶</span></h2>
-            </div>
-            <div className="w3-row">
-            <DoggoPicture imageterm={imageterm} imageURL={imageURL}/>
-            <BreedList dogs={dogs} imageterm={imageterm} changeDoggo={this.changeDoggo.bind(this)} />
-            </div>
             <div className="w3-row">
             <DoggoLabel message={imageterm} />
+            <DoggoPicture imageterm={imageterm} imageURL={imageURL}/>
+            <BreedList dogs={dogs} imageterm={imageterm} changeDoggo={this.changeDoggo.bind(this)} />
             </div>
           </div>
 

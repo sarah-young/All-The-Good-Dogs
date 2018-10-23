@@ -33,7 +33,7 @@ class BreedList extends React.Component {
   }
 
     return (
-      <div name={title} className="dog-breed-list-container w3-half">
+      <div name={title} className="dog-breed-list-container">
       {rows}
       </div>
     );

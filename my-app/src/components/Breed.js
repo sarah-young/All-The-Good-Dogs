@@ -12,15 +12,15 @@ class Breed extends React.Component {
     const breed = this.props.breed;
     const id = this.props.id;
     return (
-      <button
-        className="dog-breed-button"
-        id={id}
-        name={breed}
-        onClick={this.buttonClicked.bind(this)}>
-
-        {breed}
-
-      </button>
+      <div>
+        <button
+          className="dog-breed-button"
+          id={id}
+          name={breed}
+          onClick={this.buttonClicked.bind(this)}>
+          {breed}
+        </button>
+      </div>
     );
   }
 }

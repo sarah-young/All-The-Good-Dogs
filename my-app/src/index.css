@@ -8,27 +8,47 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.app-title {
-  text-align: center;
-  padding: 3em;
+
+.container {
+
 }
 
-.doggo-image {
-  min-width: 50%;
-  max-width: 50%;
-  display: inline-block;
+.app-title {
+  text-align: center;
 }
+
 
 .doggo-label {
   text-transform: capitalize;
+  text-align: center;
+
+}
+
+.doggo-image-container {
+
+  align-items: center;
+  background-color: black;
+}
+
+.doggo-image {
+  float:left;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  max-width: 400px;
 }
 
 .dog-breed-list-container {
-  max-width: 50%;
-  min-width: 25%;
-  display: inline-block;
+  column-count: 10;
+}
+
+
+.doggo-image {
+
 }
 
 .dog-breed-button {
-  text-transform: capitalize;
+
+
 }
