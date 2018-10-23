@@ -43,6 +43,7 @@ import DoggoLabel from './components/DoggoLabel';
 
 
   render() {
+  
     const dogs = this.state.dogs;
     const imageterm = this.state.imageterm;
     const imageURL = this.state.imageURL;

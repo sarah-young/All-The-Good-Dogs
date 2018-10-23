@@ -4,7 +4,6 @@ class Breed extends React.Component {
 
   buttonClicked(e) {
     const id = e.target.id;
-    console.log(id);
     this.props.changeDoggo(id);
   }
 
