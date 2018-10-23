@@ -1,12 +1,25 @@
 import React from 'react';
 
-
 class Breed extends React.Component {
+
+  buttonClicked(e) {
+    const id = e.target.id;
+    console.log(id);
+    this.props.changeDoggo(id);
+  }
+
   render() {
     const breed = this.props.breed;
     const id = this.props.id;
     return (
-      <option className="dog-breed-button" id={id} onClick={console.log({id})}>{breed} </option>
+      <button
+        className="dog-breed-button"
+        id={id}
+        onClick={this.buttonClicked.bind(this)}>
+
+        {breed}
+
+      </button>
     );
   }
 }

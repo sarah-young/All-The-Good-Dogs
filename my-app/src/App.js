@@ -12,8 +12,16 @@ import DoggoLabel from './components/DoggoLabel';
      dogs: [],
      imageterm: 'random',
      isLoading: false,
-     imageURL: null
+     imageURL: null,
+     id: null
      }
+   }
+
+   changeDoggo(id) {
+     console.log(id);
+     axios.get('https://dog.ceo/api/breed/'+id+'/images/random')
+     .then(json => this.setState({imageURL: json.data.message, id: id}))
+     .catch(error => alert(error))
    }
 
    componentDidMount(){
@@ -29,13 +37,9 @@ import DoggoLabel from './components/DoggoLabel';
        .then(json => this.setState({imageURL: json.data.message}))
        .catch(error => alert(error)) }
      }
-     // I am setting state here too many times
+     // TODO: I am setting state here too many times
      // Each time the state is set the app is re-rendering
-
-     getDog(event) {
-        this.setState({imageterm: event.target.id})
-        console.log(this.state.imageterm)
-     }
+     // Is there a way to consolidate the setState?
 
 
   render() {
@@ -44,11 +48,13 @@ import DoggoLabel from './components/DoggoLabel';
     const imageURL = this.state.imageURL;
 
     return (
+
+    //TODO: Pass down function to add to event listener in <Breed />
           <div className="app w3-row" >
             <h2 className="app-title w3-col l12 m12 s12">Dog Breed Selector <span role="img" aria-label="dog">🐶</span></h2>
             <DoggoPicture imageterm={imageterm} imageURL={imageURL}/>
             <DoggoLabel message={imageterm} />
-            <BreedList dogs={dogs} imageterm={imageterm} />
+            <BreedList dogs={dogs} imageterm={imageterm} changeDoggo={this.changeDoggo.bind(this)} />
           </div>
     );
   }
