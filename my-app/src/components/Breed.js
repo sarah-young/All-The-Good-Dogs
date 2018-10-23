@@ -4,7 +4,8 @@ class Breed extends React.Component {
 
   buttonClicked(e) {
     const id = e.target.id;
-    this.props.changeDoggo(id);
+    const imageterm = e.target.name;
+    this.props.changeDoggo(id, imageterm);
   }
 
   render() {
@@ -14,6 +15,7 @@ class Breed extends React.Component {
       <button
         className="dog-breed-button"
         id={id}
+        name={breed}
         onClick={this.buttonClicked.bind(this)}>
 
         {breed}

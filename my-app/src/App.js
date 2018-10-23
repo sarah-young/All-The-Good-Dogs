@@ -17,10 +17,9 @@ import DoggoLabel from './components/DoggoLabel';
      }
    }
 
-   changeDoggo(id) {
-     console.log(id);
+   changeDoggo(id, imageterm) {
      axios.get('https://dog.ceo/api/breed/'+id+'/images/random')
-     .then(json => this.setState({imageURL: json.data.message, id: id}))
+     .then(json => this.setState({imageURL: json.data.message, id: id, imageterm: imageterm}))
      .catch(error => alert(error))
    }
 
@@ -43,7 +42,7 @@ import DoggoLabel from './components/DoggoLabel';
 
 
   render() {
-  
+
     const dogs = this.state.dogs;
     const imageterm = this.state.imageterm;
     const imageURL = this.state.imageURL;
