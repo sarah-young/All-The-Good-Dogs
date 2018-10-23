@@ -10,7 +10,6 @@ class BreedList extends React.Component {
     const title = "Dog Breed List";
     const rows = [];
     let keylist = Object.keys(breedlistobj);
-    console.log(keylist);
     let i; let j;
     for (i = 0; i < keylist.length; i++) {
       if (breedlistobj[keylist[i]].length === 0) {
