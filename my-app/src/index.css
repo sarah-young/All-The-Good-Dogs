@@ -21,6 +21,7 @@ body {
 .doggo-label {
   text-transform: capitalize;
   text-align: center;
+  max-width: 50%;
 
 }
 
@@ -41,15 +42,23 @@ body {
 }
 
 .dog-breed-list-container {
-  column-count: 4;
-}
-
-
-.doggo-image {
-
+  column-count: 8;
+  max-width: 100%;
+  padding: 10px;
 }
 
 .dog-breed-button {
-
+  margin: 2px;
+  height: 3em;
+  width: 100%;
+  background-color: #2C6975;
+  color: white;
+  text-transform: capitalize;
 
 }
+
+.dog-breed-button:hover {
+  background-color: #23C5DE;
+}
+
+.dog-breed-button:focus {outline:0;}
