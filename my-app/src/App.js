@@ -22,7 +22,7 @@ import DoggoLabel from './components/DoggoLabel';
      .then(json => this.setState({imageURL: json.data.message, id: id, imageterm: imageterm}))
      .catch(error => alert(error))
       } else { axios.get('https://dog.ceo/api/breeds/image/random')
-     .then(json => this.setState({imageURL: json.data.message}))
+     .then(json => this.setState({imageURL: json.data.message, id:id, imageterm: imageterm}))
      .catch(error => alert(error)) }
       }
 

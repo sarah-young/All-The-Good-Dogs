@@ -79,6 +79,7 @@ mark {
 
 footer {
   text-align: center;
+  padding: 1em;
 }
 
 .dog-breed-button:focus {outline:0;}
