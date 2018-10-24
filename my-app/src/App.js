@@ -18,10 +18,13 @@ import DoggoLabel from './components/DoggoLabel';
    }
    // Method on class that is triggered by onClick event
    changeDoggo(id, imageterm) {
-     axios.get('https://dog.ceo/api/breed/'+id+'/images/random')
+     if(id!=="random") { axios.get('https://dog.ceo/api/breed/'+id+'/images/random')
      .then(json => this.setState({imageURL: json.data.message, id: id, imageterm: imageterm}))
      .catch(error => alert(error))
-   }
+      } else { axios.get('https://dog.ceo/api/breeds/image/random')
+     .then(json => this.setState({imageURL: json.data.message}))
+     .catch(error => alert(error)) }
+      }
 
    componentDidMount(){
      this.setState( {isLoading: true })
@@ -47,7 +50,6 @@ import DoggoLabel from './components/DoggoLabel';
       <div className="container">
             <DoggoPicture imageterm={imageterm} imageURL={imageURL}/>
             <h1 className="app-title">All The Good Dogs <span role="img" aria-label="dog">🐶</span></h1>
-            <div className="app-subtitle">Traverse the Biggest Open Source Dog Photo Collection on the Internet.</div>
             <DoggoLabel message={imageterm} />
             <BreedList dogs={dogs} imageterm={imageterm} changeDoggo={this.changeDoggo.bind(this)} />
       </div>
