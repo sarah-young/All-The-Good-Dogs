@@ -45,16 +45,12 @@ import DoggoLabel from './components/DoggoLabel';
     return (
 
       <div className="container">
-            <h2 className="app-title">Dog Breed Selector <span role="img" aria-label="dog">🐶</span></h2>
-
             <DoggoPicture imageterm={imageterm} imageURL={imageURL}/>
+              <h2 className="app-title">Dog Breed Selector <span role="img" aria-label="dog">🐶</span></h2>
             <DoggoLabel message={imageterm} />
-
-
             <BreedList dogs={dogs} imageterm={imageterm} changeDoggo={this.changeDoggo.bind(this)} />
-            </div>
 
-
+      </div>
     );
   }
 }
