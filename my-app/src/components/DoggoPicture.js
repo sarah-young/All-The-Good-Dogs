@@ -8,7 +8,7 @@ class DoggoPicture extends React.Component {
 
     return (
       <div className="frame">
-      <span class="helper"></span>
+      <span className="helper"></span>
       <img src={imageURL} alt={imageterm} className="doggo-image" />
       </div>
     );
