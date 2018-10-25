@@ -103,17 +103,6 @@ footer {
   outline: 0;
 }
 
-/* Media Queries */
-@media(max-width: 700px) {
-  .container {
-    grid-row: 2fr;
-    grid-column: 2fr;
-  }
-
-
-
-}
-
 @media(max-width: 1000px) {
   .container {
     display: grid;
@@ -131,10 +120,8 @@ footer {
   }
 
   .doggo-image {
-
     /* Grid within .frame */
-    grid-row: 3/4;
-    /* grid-column:; */
+
     border-radius: 5%;
 
   }
