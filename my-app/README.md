@@ -2,7 +2,7 @@
 
 ## Welcome! This project was created in October 2018 using [ReactJS](https://reactjs.org/), [axios](https://www.npmjs.com/package/axios), and the [Dog API](http://www.example.com/).
 
-###To Get Started:
+##To Get Started:
 1. `git clone https://github.com/sarah-young/all-the-good-dogs`
 2. Navigate to the `my-app` repository in the command line.
 3. Enter `npm install`.
