@@ -41,6 +41,7 @@ body {
 }
 
 .frame {
+  
   /* Placement on main grid */
   grid-column: 1/3;
   grid-row: 1/5;
