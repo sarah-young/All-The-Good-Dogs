@@ -69,7 +69,8 @@ class App extends React.Component {
     const imageURL = this.state.imageURL;
     return (
 
-      <div className = "container">
+      <
+      div className = "container" >
       <
       DoggoPicture imageterm = {
         imageterm
@@ -91,8 +92,8 @@ class App extends React.Component {
       changeDoggo = {
         this.changeDoggo.bind(this)
       }
-      /> <
-      /div>
+      /> < /
+      div >
     );
   }
 }
