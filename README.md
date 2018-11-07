@@ -14,3 +14,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 1. Enter `npm test` into the command line.
 2. Tests will run in terminal.
 3. Testing is done with [Jest](https://jestjs.io/) using [Enzyme](https://airbnb.io/enzyme/docs/api/).
+4. To see test coverage, run `npm test -- --coverage`.
