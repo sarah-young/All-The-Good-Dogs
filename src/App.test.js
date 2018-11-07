@@ -1,9 +1,7 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import EnzymeAdapter from 'enzyme-adapter-react-16';
-import App from './App';
-
-Enzyme.configure({ adapter: new EnzymeAdapter() });
+import { shallow } from 'enzyme';
+import App, { changeDoggo } from './App';
+import moxios from 'moxios';
 
 const setup = (props = {}, state=null) => {
   const wrapper = shallow(<App />);
@@ -13,6 +11,11 @@ const setup = (props = {}, state=null) => {
 
 const findByTestAttr = (wrapper, val) => {
   return wrapper.find(`[data-test="${val}"]`);
+}
+
+const dogObject = {
+  "status":"success",
+  "message":"https:\/\/images.dog.ceo\/breeds\/saluki\/n02091831_2338.jpg"
 }
 
 test('renders without error', () => {
@@ -42,5 +45,41 @@ describe('see if chain of components are rendering correctly', () => {
   test('BreedList component renders without error', () => {
     const breedList = findByTestAttr(wrapper, 'breed-list');
     expect(breedList.length).toBe(1);
-  })
+  });
+});
+// API call test using moxios
+describe('Test if Dog API is being called when state.id === `random`', () => {
+  beforeEach(() => {
+    moxios.install();
+    moxios.stubRequest('https://dog.ceo/api/breed/id/images/random', {
+    status: 200,
+    response: dogObject,
+    });
+  });
+  afterEach(() => {
+    moxios.uninstall();
+  });
+  test('tests that API call is made', () => {
+
+
+  });
+  test('tests that state updates correctly', () => {
+
+
+  });
+});
+
+describe('Test if Dog API is being call when state.id !== `random`', () => {
+  beforeEach(() => {
+
+  });
+  afterEach(() => {
+
+  });
+  test('tests that API call is made when id !== random', () =>{
+
+  });
+  test('tests that state updates correctly when id !== random', () =>{
+
+  });
 });
