@@ -1,10 +1,9 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import EnzymeAdapter from 'enzyme-adapter-react-16';
+import { shallow } from 'enzyme';
 import BreedList from './BreedList';
 import { changeDoggo } from '../App'; // ?? Is this the best way to import function?
 
-Enzyme.configure({ adapter: new EnzymeAdapter() });
+
 
 const setup = (props = { dogs: Dogs.message, changeDoggo: changeDoggo } , state=null) => {
   const wrapper = shallow(<BreedList />);
@@ -21,8 +20,6 @@ test('renders without error', () => {
 });
 
 // Test to see if axios call works
-
-
 
 
 // Test to see if number of buttons matches number of dog breeds in List

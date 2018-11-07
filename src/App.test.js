@@ -13,10 +13,16 @@ const findByTestAttr = (wrapper, val) => {
   return wrapper.find(`[data-test="${val}"]`);
 }
 
-const dogObject = {
+const dogObjectRandom = {
   "status":"success",
   "message":"https:\/\/images.dog.ceo\/breeds\/saluki\/n02091831_2338.jpg"
 }
+
+const dogObject = {
+  "status":"success",
+  "message":"https:\/\/images.dog.ceo\/breeds\/terrier-american\/n02093428_18993.jpg"
+}
+
 
 test('renders without error', () => {
   const wrapper = setup();
@@ -51,35 +57,30 @@ describe('see if chain of components are rendering correctly', () => {
 describe('Test if Dog API is being called when state.id === `random`', () => {
   beforeEach(() => {
     moxios.install();
-    moxios.stubRequest('https://dog.ceo/api/breed/id/images/random', {
-    status: 200,
-    response: dogObject,
+  });
+  afterEach(() => {
+    moxios.uninstall();
+  });
+  test('adds dog list to state', () => {
+
+  });
+});
+
+describe('Test behavior of API when id !== random', () => {
+  beforeEach(() => {
+    moxios.install();
+    moxios.stubRequest('https://dog.ceo/api/breed/terrier-american/images/random', {
+      status: 200,
+      response: dogObject,
     });
   });
   afterEach(() => {
     moxios.uninstall();
   });
-  test('tests that API call is made', () => {
-
-
-  });
-  test('tests that state updates correctly', () => {
-
+  test('tests that API call is made', () =>{
 
   });
-});
-
-describe('Test if Dog API is being call when state.id !== `random`', () => {
-  beforeEach(() => {
-
-  });
-  afterEach(() => {
-
-  });
-  test('tests that API call is made when id !== random', () =>{
-
-  });
-  test('tests that state updates correctly when id !== random', () =>{
+  test('tests that state updates correctly', () =>{
 
   });
 });
