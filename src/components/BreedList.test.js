@@ -3,8 +3,6 @@ import { shallow } from 'enzyme';
 import BreedList from './BreedList';
 import { changeDoggo } from '../App'; // ?? Is this the best way to import function?
 
-
-
 const setup = (props = { dogs: Dogs.message, changeDoggo: changeDoggo } , state=null) => {
   const wrapper = shallow(<BreedList />);
   if (state) wrapper.setState(state);
