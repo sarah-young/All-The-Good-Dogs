@@ -1,11 +1,16 @@
 import React from 'react';
 class Breed extends React.Component {
-
+  constructor(props) {
+  super(props);
+  this.buttonClicked = this.buttonClicked.bind(this);
+}
   buttonClicked(e) {
     const id = e.target.id;
     const imageterm = e.target.name;
     this.props.changeDoggo(id, imageterm);
   }
+
+
 
   render() {
     const breed = this.props.breed;
@@ -16,7 +21,7 @@ class Breed extends React.Component {
           id={id}
           name={breed}
           data-test="breed-button"
-          onClick={this.buttonClicked.bind(this)}>
+          onClick={this.buttonClicked}>
           { breed }
         </button>
     );
