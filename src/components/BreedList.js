@@ -26,6 +26,7 @@ class BreedList extends React.Component {
               + " " + keylist[i]} key={"k"+keylist[i]
               +"-"+breedlistobj[keylist[i]][j]} id={keylist[i]+"-"
               + breedlistobj[keylist[i]][j]} changeDoggo={changeDoggo}/>)
+    //TODO: Change variable names so this is more readable
       }
     }
   }
