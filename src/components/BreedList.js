@@ -15,14 +15,16 @@ class BreedList extends React.Component {
 
     keylist.forEach(function(dog) {
       let x = breedlistobj[dog].map(x => x);
+      // This could be further refactored to put the if statement in the mapping?
       let breed;
       if (x.length){
         x.forEach(function(subBreed) {
-          breed = `${subBreed}-${dog}`
+          breed = `${subBreed} ${dog}`
           rows.push(
           <Breed
             breed = {breed}
             key = {breed}
+            id = { `${dog}-${subBreed}` }
             changeDoggo = {changeDoggo}
           />);
           })
@@ -31,6 +33,7 @@ class BreedList extends React.Component {
           rows.push(
           <Breed
             breed = {breed}
+            id = {breed}
             key = {breed}
             changeDoggo = {changeDoggo}
           />);
