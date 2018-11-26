@@ -16,6 +16,7 @@ class App extends React.Component {
       id: null
     }
   }
+  
   // Method on class that is triggered by onClick event
   changeDoggo(id, imageterm) {
     if (id !== "random") {
@@ -68,20 +69,19 @@ class App extends React.Component {
     const imageterm = this.state.imageterm;
     const imageURL = this.state.imageURL;
     return (
-
-      <div className = "container" data-test="container-component">
-      <DoggoPicture
-      imageterm = {imageterm}
-      imageURL = {imageURL}
-      data-test = "doggo-picture"/>
-      <DoggoLabel
-      message = {imageterm}
-      data-test = "doggo-label"/>
-      <BreedList
-      dogs = {dogs}
-      imageterm = {imageterm}
-      changeDoggo = {this.changeDoggo.bind(this)}
-      data-test = "breed-list"/>
+      <div className="container" data-test="container-component">
+        <DoggoPicture
+          imageterm={imageterm}
+          imageURL={imageURL}
+          data-test="doggo-picture"/>
+        <DoggoLabel
+          message={imageterm}
+          data-test="doggo-label"/>
+        <BreedList
+          dogs={dogs}
+          imageterm={imageterm}
+          changeDoggo={this.changeDoggo.bind(this)}
+          data-test="breed-list"/>
       </div>
     );
   }
